@@ -27,7 +27,7 @@ onFileUploadComplete: function (file) {
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
-  extended: true
+  extended: false 
 }));
 
 /*Handling routes.*/
@@ -49,29 +49,15 @@ app.post('/vistrails', function(req, res){
       res.end(err1);
     }else{
       console.log(body1);
-      res.end(body1);
+      var result = body1.toString();
+      res.end(result);
     }
   })
-  //res.end("request to /vistrails received");
+  // res.end("request to /vistrails received");
 
 });
 
-  // var options = {
-  //     url : rest_api.start_measurement,
-  //     json: true
-  // };
-  // request.post(options, function(err, res, body){
-  //   if(err){
-  //     callback(err, null);
-  //     return;
-  //   }
-  //   else{
-  //     console.log("Memory Measurement Started");
-  //     console.log(body);
-  //     callback(null, null);
-  //     return;
-  //     }
-  // });
+
 
 app.post('/upload',function(req,res){
   if(done==true){

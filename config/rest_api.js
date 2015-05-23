@@ -1,4 +1,4 @@
-var host_url = process.env.REST_API_URL || "http://0.0.0.0:9018";
+var host_url = process.env.REST_API_URL || "http://127.0.0.1:9018";
 
 var RestAPI = {
   'vistrails' : host_url + '/vistrails'
